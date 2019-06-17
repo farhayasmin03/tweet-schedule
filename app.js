@@ -64,8 +64,23 @@ app.post('/save', function (req, res) {
       }
     });  */
   }
+  
 });
 //})
+app.post('/submit',function(req,res){
+  var tweetData=req.body.tweetPost
+  var tweet={
+    status:tweetData
+  }
+  T.post('statuses/update', tweet,  postTweet);
+  function postTweet(error, data, response) {
+    if(error) throw error;
+    console.log(data);  // Tweet body.
+    console.log(response);  // Raw response object.
+  }
+  });
+
+
 
 
 app.listen(3000, function () {

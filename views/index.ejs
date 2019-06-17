@@ -21,6 +21,10 @@
 
 
     </form>
+    <form action="/submit" method="POST">
+        <textarea id="tweetPost" name="tweetPost" placeholder="Enter your tweet to be posted"></textarea>
+        <button id="post">Post Tweet</button>
+    </form>
     <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js">
     </script>
 
@@ -29,13 +33,12 @@
 
         function run(e) {
             e.preventDefault();
-            
+
             var data = "<%=td%>";
-      
-        document.getElementById("text").innerHTML=data
-            
+
+            document.getElementById("text").innerHTML=data
+
         }
-       
     </script>
 
 </body>
